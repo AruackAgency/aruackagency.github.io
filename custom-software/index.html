@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Custom Software Engineering | Aruack Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nTMRsbn/aruack.png" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#030712] selection:bg-emerald-500/30 text-[#f9fafb]">
+  
+  <div id="header-container"></div>
+
+  <main class="relative flex-grow overflow-y-auto">
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 overflow-hidden">
+      <!-- Background Ambience -->
+      <div class="absolute top-0 right-1/4 w-[700px] h-[700px] bg-emerald-600/5 blur-[200px] -z-10 rounded-full"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-blue-600/5 blur-[180px] -z-10 rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-emerald-500/30 text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+          Enterprise Architecture
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black mb-6 tracking-tighter uppercase leading-[1.1]">
+          Custom <span class="bg-gradient-to-r from-emerald-400 via-teal-500 to-blue-500 bg-clip-text text-transparent p-2" style="-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Software</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed mt-6 font-medium px-4">
+          Bespoke systems engineered from the ground up. We develop secure, low-latency, and infinitely scalable architectures tailored specifically to your data needs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Full Stack Engineering -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-[150px] text-white/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none transform rotate-12">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Full-Stack Development</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">End-to-end development services utilizing modern frameworks and compiled languages to ensure optimal runtime performance.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Java / Spring Boot</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">C# / .NET Core</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Python / FastAPI</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Go / Rust</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Architecture -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 text-[150px] text-white/5 group-hover:text-blue-500/10 transition-colors pointer-events-none transform -rotate-12">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">API Integration</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Secure data exchange between distributed services. We design resilient RESTful and GraphQL APIs with advanced rate limiting and OAuth authorization.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">GraphQL Schemas</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">REST Architecture</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Websockets & RPC</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">OAuth 2.0 / JWT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legacy System Upgrades -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-teal-500/30 hover:shadow-[0_0_40px_rgba(20,184,166,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 text-[150px] text-white/5 group-hover:text-teal-500/10 transition-colors pointer-events-none transform rotate-12">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-2xl">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Legacy Migrations</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Modernize your deprecated codebases. We meticulously refactor monolithic architecture into lightweight, maintainable microservices with zero downtime.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Database Migration</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Monolith to Microservices</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">PHP / ASP Upgrades</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Data Cleansing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud Infrastructure -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-indigo-500/30 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -left-10 -top-10 text-[150px] text-white/5 group-hover:text-indigo-500/10 transition-colors pointer-events-none transform -rotate-12">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Cloud Scalability</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Deploy resilient applications utilizing serverless architecture or containerized fleets engineered to handle millions of concurrent connections.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">AWS Lambda / EC2</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Google Cloud (GCP)</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Load Balancing</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Edge Caching (CDN)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Call to Action Span -->
+             <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-emerald-500/50 transition-all group relative overflow-hidden md:col-span-2 text-center flex flex-col items-center justify-center mt-4">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-600/10 via-teal-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase relative z-10">Compile Your Vision</h3>
+                <p class="text-gray-400 mb-10 max-w-2xl relative z-10 font-medium">Ready to break ground on a complex backend system or migrate off a legacy monolith? Schedule a discovery meeting with our system architects.</p>
+                <button onclick="window.location.href='/booking/?service=Custom%20Software%20Development'" class="px-12 py-6 bg-white text-black font-black rounded-full text-xs md:text-sm uppercase tracking-[0.2em] shadow-2xl shadow-white/10 hover:shadow-emerald-500/30 hover:bg-emerald-400 transition-all active:scale-95 flex items-center gap-4 relative z-10">
+                    <span>Initialize Blueprint</span>
+                    <i class="fas fa-hard-hat"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module">
+    import { renderHeader, renderFooter } from '../assets/js/main.js';
+    renderHeader('custom-software');
+    renderFooter();
+  </script>
+</body>
+</html>

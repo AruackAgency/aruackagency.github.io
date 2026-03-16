@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Book a Mission | Aruack Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nTMRsbn/aruack.png" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#030712] selection:bg-cyan-500/30 overflow-x-hidden text-[#f9fafb]">
+  
+  <div id="header-container"></div>
+
+  <main class="relative flex-grow overflow-y-auto">
+    
+    <!-- Success State -->
+    <div id="success-view" class="hidden min-h-[70vh] flex flex-col items-center justify-center px-4 text-center">
+      <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-8 animate-pulse shadow-[0_0_40px_rgba(34,197,94,0.3)]">
+        <i class="fas fa-check text-4xl text-white"></i>
+      </div>
+      <h1 class="text-5xl font-extrabold mb-4 tracking-tight">Booking Confirmed</h1>
+      <p class="text-gray-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
+        Your request for <span id="confirmed-service" class="text-white font-bold"></span> has been received. 
+        A team member will contact you shortly to confirm the details.
+      </p>
+      <a href="/" class="px-10 py-4 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:bg-gray-200 transition-all shadow-xl">
+        Return Home
+      </a>
+    </div>
+
+    <!-- Booking Form View -->
+    <div id="form-view" class="max-w-5xl mx-auto py-24 px-4">
+      <div class="text-center mb-16 animate-fadeIn">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Book a <span class="gradient-text">Service</span></h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">Select a service and choose your preferred schedule to get started with Aruack Agency.</p>
+      </div>
+
+      <div class="glass p-8 md:p-16 rounded-[3rem] border-white/5 shadow-2xl relative overflow-hidden animate-fadeIn" style="animation-delay: 100ms">
+        <form id="booking-form" class="space-y-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+              <label class="block text-xs font-black text-gray-500 uppercase tracking-widest">Choose a Service</label>
+              <div id="services-list" class="grid grid-cols-1 gap-3 max-h-[500px] overflow-y-auto pr-4 no-scrollbar">
+                <!-- Services injected via JS -->
+              </div>
+            </div>
+
+            <div class="space-y-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-black text-gray-500 uppercase tracking-widest mb-4">Preferred Date</label>
+                  <input 
+                    type="date" id="date" required
+                    class="w-full px-6 py-5 rounded-2xl bg-gray-900/50 border border-gray-800 focus:border-purple-500 outline-none text-white appearance-none"
+                    style="color-scheme: dark"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-black text-gray-500 uppercase tracking-widest mb-4">Preferred Time</label>
+                  <select 
+                    id="time" required
+                    class="w-full px-6 py-5 rounded-2xl bg-gray-900/50 border border-gray-800 focus:border-purple-500 outline-none text-white appearance-none"
+                  >
+                    <option value="">Select a Time</option>
+                    <option>10:00 AM - 11:00 AM</option>
+                    <option>11:30 AM - 12:30 PM</option>
+                    <option>02:00 PM - 03:00 PM</option>
+                    <option>04:30 PM - 05:30 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <label class="block text-xs font-black text-gray-500 uppercase tracking-widest mb-2">Contact Information</label>
+                <div class="space-y-4">
+                  <input 
+                    type="text" id="name" placeholder="Full Name" required
+                    class="w-full px-6 py-5 rounded-2xl bg-gray-900/50 border border-gray-800 focus:border-purple-500 outline-none text-white"
+                  />
+                  <input 
+                    type="tel" id="booking-phone" placeholder="Phone Number" required
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    class="w-full px-6 py-5 rounded-2xl bg-gray-900/50 border border-gray-800 focus:border-purple-500 outline-none text-white"
+                  />
+                  <input 
+                    type="email" id="email" placeholder="Email Address" required
+                    class="w-full px-6 py-5 rounded-2xl bg-gray-900/50 border border-gray-800 focus:border-purple-500 outline-none text-white"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2 hidden" id="error-msg">
+                <p class="text-red-500 text-xs font-bold uppercase tracking-widest bg-red-500/10 p-4 rounded-2xl border border-red-500/20">
+                  <i class="fas fa-exclamation-circle mr-2"></i> Please provide all required details.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button 
+            type="submit" id="submit-btn"
+            class="w-full py-6 bg-white text-black font-black text-lg rounded-3xl hover:bg-gray-200 transition-all flex items-center justify-center space-x-4 shadow-2xl active:scale-[0.98]"
+          >
+            <span>Submit Booking Request</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { renderHeader, renderFooter } from '../assets/js/main.js';
+    import { SERVICES, PRODUCTS } from '../assets/js/data.js';
+
+    renderHeader('booking');
+    renderFooter();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let selectedService = urlParams.get('service') || '';
+
+    const allOfferings = [
+        ...SERVICES.map(s => ({ title: s.title, icon: s.icon })), 
+        ...PRODUCTS.map(p => ({ title: p.title, icon: p.icon }))
+    ];
+
+    document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+    const servicesList = document.getElementById('services-list');
+    
+    const renderServices = () => {
+        servicesList.innerHTML = allOfferings.map((s, idx) => `
+            <label class="flex items-center p-5 rounded-2xl border transition-all cursor-pointer group ${selectedService === s.title ? 'bg-purple-600 text-white border-purple-500 shadow-xl scale-[1.02]' : 'bg-gray-900/50 border-gray-800 hover:border-gray-700'}">
+                <input 
+                    type="radio" 
+                    name="service" 
+                    value="${s.title}"
+                    class="hidden service-radio" 
+                    ${selectedService === s.title ? 'checked' : ''}
+                    required
+                />
+                <div class="${selectedService === s.title ? 'bg-white/20' : 'bg-gray-800 text-gray-500 group-hover:text-purple-400'} w-10 h-10 rounded-xl flex items-center justify-center mr-5 transition-all">
+                    <i class="fas ${s.icon}"></i>
+                </div>
+                <span class="font-bold text-sm tracking-tight">${s.title}</span>
+            </label>
+        `).join('');
+
+        // Attach event listeners
+        document.querySelectorAll('.service-radio').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                selectedService = e.target.value;
+                renderServices(); // Re-render to update UI classes
+            });
+        });
+    };
+
+    renderServices();
+
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formView = document.getElementById('form-view');
+    const successView = document.getElementById('success-view');
+    const confirmedServiceSpan = document.getElementById('confirmed-service');
+
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errorMsg.classList.add('hidden');
+
+        // Collect and trim values
+        const service = selectedService;
+        const date    = document.getElementById('date').value;
+        const time    = document.getElementById('time').value;
+        const name    = document.getElementById('name').value.trim();
+        const phone   = document.getElementById('booking-phone').value.trim();
+        const email   = document.getElementById('email').value.trim();
+
+        // Validate all required fields
+        if (!service || !date || !time || !name || !phone || !email) {
+            errorMsg.classList.remove('hidden');
+            return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin text-2xl"></i>';
+
+        // Build mailto — exact format as specified
+        const subject = encodeURIComponent('New Inquiry');
+        const body = encodeURIComponent(
+            'Name: '    + name    + '\r\n' +
+            'Phone: '   + phone   + '\r\n' +
+            'Email: '   + email   + '\r\n' +
+            'Service: ' + service + '\r\n' +
+            'Date: '    + date    + '\r\n' +
+            'Time: '    + time    + '\r\n'
+        );
+
+        setTimeout(() => {
+            // Save booking to localStorage for admin records
+            const bookings = JSON.parse(localStorage.getItem('aruack_bookings') || '[]');
+            bookings.push({
+                service, date, time, name, phone, email,
+                status: 'pending',
+                id: Math.random().toString(36).substr(2, 9),
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('aruack_bookings', JSON.stringify(bookings));
+
+            // Trigger the user's default email client (does NOT navigate away)
+            const mailLink = document.createElement('a');
+            mailLink.href = `mailto:support@aruack.online?subject=${subject}&body=${body}`;
+            document.body.appendChild(mailLink);
+            mailLink.click();
+            document.body.removeChild(mailLink);
+
+            // Show success view
+            confirmedServiceSpan.textContent = service;
+            formView.classList.add('hidden');
+            successView.classList.remove('hidden');
+            successView.classList.add('flex');
+            window.scrollTo(0, 0);
+
+            // Restore button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Submit Booking Request</span><i class="fas fa-arrow-right"></i>';
+        }, 1200);
+    });
+
+  </script>
+</body>
+</html>

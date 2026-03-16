@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Web & App Development | Aruack Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nTMRsbn/aruack.png" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#030712] selection:bg-cyan-500/30 text-[#f9fafb]">
+  
+  <div id="header-container"></div>
+
+  <main class="relative flex-grow overflow-y-auto">
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 overflow-hidden">
+      <!-- Background Ambience -->
+      <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-cyan-600/5 blur-[180px] -z-10 rounded-full"></div>
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[150px] -z-10 rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-cyan-500/30 text-cyan-400 text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+          Engineering the Future
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black mb-6 tracking-tighter uppercase leading-[1.1]">
+          Web & App <br/>
+          <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent p-2" style="-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Development</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed mt-6 font-medium px-4">
+          Scalable, high-performance software engineered for global entities. From seamless enterprise web platforms to native mobile experiences.
+        </p>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Custom Web Applications Section -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-cyan-500/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-[150px] text-white/5 group-hover:text-cyan-500/10 transition-colors pointer-events-none">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Custom Web Apps</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">We build robust, responsive, and blazing-fast web applications using modern JavaScript frameworks.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Core Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">React</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Next.js</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Node.js</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Vue</span>
+                        </div>
+                    </div>
+                    <div>
+                         <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Included Features</h3>
+                         <ul class="space-y-3 text-sm">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500/50 mr-3 mt-1 text-xs"></i><span>Server-Side Rendering (SSR) for SEO</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500/50 mr-3 mt-1 text-xs"></i><span>Progressive Web App (PWA) capabilities</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500/50 mr-3 mt-1 text-xs"></i><span>REST & GraphQL API Integration</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile App Development Section -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(168,85,247,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-[150px] text-white/5 group-hover:text-purple-500/10 transition-colors pointer-events-none">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Mobile Applications</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                     <p class="leading-relaxed text-sm">Native and cross-platform mobile solutions engineered for peak performance on iOS and Android devices.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Core Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">React Native</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Flutter</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Swift</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Kotlin</span>
+                        </div>
+                    </div>
+                    <div>
+                         <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Included Features</h3>
+                         <ul class="space-y-3 text-sm">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500/50 mr-3 mt-1 text-xs"></i><span>App Store & Google Play Deployment</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500/50 mr-3 mt-1 text-xs"></i><span>Push Notifications & Background Sync</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500/50 mr-3 mt-1 text-xs"></i><span>Offline-first architecture integration</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Solutions Section -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 text-[150px] text-white/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none transform rotate-12">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">E-Commerce Platforms</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                     <p class="leading-relaxed text-sm">High-conversion, custom digital storefronts designed to maximize user engagement and revenue.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Core Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Shopify Plus</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">WooCommerce</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Magento</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Stripe Integration</span>
+                        </div>
+                    </div>
+                     <div>
+                         <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Included Features</h3>
+                         <ul class="space-y-3 text-sm">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-emerald-500/50 mr-3 mt-1 text-xs"></i><span>Secure Payment Gateway Integrations</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-emerald-500/50 mr-3 mt-1 text-xs"></i><span>Inventory & CRM Sync Architecture</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-emerald-500/50 mr-3 mt-1 text-xs"></i><span>Frictionless One-Page Checkouts</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Software Section -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 text-[150px] text-white/5 group-hover:text-blue-500/10 transition-colors pointer-events-none transform -rotate-12">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Enterprise Software</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                     <p class="leading-relaxed text-sm">Complex, secure data pipelines, internal dashboards, and custom CRM systems for large-scale operations.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Core Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Python</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Django</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">AWS / GCP</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">PostgreSQL</span>
+                        </div>
+                    </div>
+                     <div>
+                         <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Included Features</h3>
+                         <ul class="space-y-3 text-sm">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500/50 mr-3 mt-1 text-xs"></i><span>Role-Based Access Control (RBAC)</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500/50 mr-3 mt-1 text-xs"></i><span>Scalable Microservices Architecture</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500/50 mr-3 mt-1 text-xs"></i><span>Automated CI/CD DevOps Pipelines</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Span -->
+             <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-cyan-500/50 transition-all group relative overflow-hidden md:col-span-2 text-center flex flex-col items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-600/10 via-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase relative z-10">Start Your Development Cycle</h3>
+                <p class="text-gray-400 mb-10 max-w-2xl relative z-10 font-medium">Ready to build your next generation platform? Schedule a technical consultation with our lead engineers today to review your architecture needs.</p>
+                <button onclick="window.location.href='/booking/?service=Web%20%26%20App%20Development'" class="px-12 py-6 bg-white text-black font-black rounded-full text-xs md:text-sm uppercase tracking-[0.2em] shadow-2xl shadow-white/10 hover:shadow-cyan-500/30 hover:bg-cyan-400 transition-all active:scale-95 flex items-center gap-4 relative z-10">
+                    <span>Initialize Project</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module">
+    import { renderHeader, renderFooter } from '../assets/js/main.js';
+    renderHeader('web-app-dev');
+    renderFooter();
+  </script>
+</body>
+</html>

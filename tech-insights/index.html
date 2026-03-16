@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Latest Tech Insights | Aruack Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nTMRsbn/aruack.png" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#030712] selection:bg-cyan-500/30 text-[#f9fafb]">
+  
+  <div id="header-container"></div>
+
+  <main class="relative flex-grow overflow-y-auto">
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 overflow-hidden">
+      <!-- Background Ambience -->
+      <div class="absolute top-0 right-1/4 w-[700px] h-[700px] bg-pink-600/5 blur-[200px] -z-10 rounded-full"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-indigo-600/5 blur-[180px] -z-10 rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-pink-500/30 text-pink-400 text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_0_15px_rgba(236,72,153,0.2)]">
+          Future-Proof Architecture
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black mb-6 tracking-tighter uppercase leading-[1.1]">
+          Tech <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent p-2" style="-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Insights</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed mt-6 font-medium px-4">
+          Navigate the bleeding edge of innovation. We actively consult, engineer, and deploy experimental technologies into production-ready environments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- AI & Machine Learning -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-pink-500/30 hover:shadow-[0_0_40px_rgba(236,72,153,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 text-[150px] text-white/5 group-hover:text-pink-500/10 transition-colors pointer-events-none transform -rotate-12">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-2xl">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">AI & Machine Learning</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Automate cognitive tasks and extract deep data insights by integrating LLMs, predictive algorithms, and custom neural networks.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">TensorFlow & PyTorch</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">NLP & Chatbots</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Computer Vision</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">OpenAI API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blockchain Architecture -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-indigo-500/30 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-[150px] text-white/5 group-hover:text-indigo-500/10 transition-colors pointer-events-none transform rotate-12">
+                    <i class="fab fa-ethereum"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Blockchain & Web3</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Decentralize your digital assets. We audit and engineer bulletproof smart contracts, custom tokens, and full-scale DApps.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Solidity & Rust</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">DeFi Protocols</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Smart Contract Auditing</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">EVM Networks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internet of Things -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 text-[150px] text-white/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none transform -rotate-12">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">Internet of Things (IoT)</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Bridge the physical and digital. We build secure telemetry networks for connected devices, sensors, and smart city infrastructure.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Hardware Interfacing</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">MQTT Protocol</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Real-Time Dashboards</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Edge Computing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DevOps & Automation -->
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(168,85,247,0.1)] transition-all group relative overflow-hidden">
+                <div class="absolute -left-10 -top-10 text-[150px] text-white/5 group-hover:text-purple-500/10 transition-colors pointer-events-none transform rotate-12">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="flex items-center space-x-4 mb-8 relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase">DevOps Automation</h2>
+                </div>
+                <div class="space-y-6 relative z-10 text-gray-400">
+                    <p class="leading-relaxed text-sm">Supercharge your deploy cycles and infrastructure stability with automated CI/CD pipelines, container orchestration, and cloud-native scaling.</p>
+                    <div>
+                        <h3 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-3 mt-6">Capabilities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Docker & Kubernetes</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">Terraform (IaC)</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">AWS & Azure</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-lg text-xs font-bold text-gray-300 border border-white/10">GitOps Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Call to Action Span -->
+             <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:border-pink-500/50 transition-all group relative overflow-hidden md:col-span-2 text-center flex flex-col items-center justify-center mt-4">
+                <div class="absolute inset-0 bg-gradient-to-r from-pink-600/10 via-purple-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase relative z-10">Consult The Future</h3>
+                <p class="text-gray-400 mb-10 max-w-2xl relative z-10 font-medium">Ready to integrate next-generation architecture into your existing infrastructure? Secure a consultation session tailored to your technical requirements.</p>
+                <button onclick="window.location.href='/booking/?service=Tech%20Consulting'" class="px-12 py-6 bg-white text-black font-black rounded-full text-xs md:text-sm uppercase tracking-[0.2em] shadow-2xl shadow-white/10 hover:shadow-pink-500/30 hover:bg-pink-400 transition-all active:scale-95 flex items-center gap-4 relative z-10">
+                    <span>Schedule Analysis</span>
+                    <i class="fas fa-project-diagram"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module">
+    import { renderHeader, renderFooter } from '../assets/js/main.js';
+    renderHeader('tech-insights');
+    renderFooter();
+  </script>
+</body>
+</html>

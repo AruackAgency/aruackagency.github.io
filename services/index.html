@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Services | Aruack Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nTMRsbn/aruack.png" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#030712] selection:bg-cyan-500/30 overflow-x-hidden text-[#f9fafb]">
+  
+  <div id="header-container"></div>
+
+  <main class="relative flex-grow overflow-y-auto">
+    <div class="relative min-h-screen pt-24 pb-32 overflow-hidden">
+      <!-- Background Ambience -->
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] -z-10 rounded-full"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 blur-[150px] -z-10 rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <!-- Header Section -->
+        <div class="text-center mb-16 animate-fadeIn">
+          <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass border border-purple-500/30 text-purple-400 text-xs font-black uppercase tracking-[0.2em]">
+            Expert Solutions
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Agency <span class="gradient-text">Services</span>
+          </h1>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Professional business services engineered to optimize your operations and drive growth.
+          </p>
+        </div>
+
+        <!-- Search and Navigation Bar -->
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 mb-20 animate-fadeIn" style="animation-delay: 100ms">
+          
+          <!-- Category Scroller -->
+          <div class="relative flex-grow lg:max-w-[70%] group">
+            <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none transition-opacity"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none transition-opacity"></div>
+            
+            <div id="category-container" class="flex items-center p-2 bg-gray-900/40 backdrop-blur-md border border-gray-800 rounded-[2.5rem] overflow-x-auto no-scrollbar shadow-xl scroll-smooth">
+              <!-- Categories injected via JS -->
+            </div>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full lg:w-80 group">
+            <div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+              <i class="fas fa-search text-gray-600 group-focus-within:text-purple-500 transition-colors"></i>
+            </div>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search services..."
+              class="w-full pl-14 pr-6 py-5 rounded-[2.5rem] bg-gray-900/40 border border-gray-800 focus:border-purple-500/50 focus:ring-4 focus:ring-purple-500/5 outline-none transition-all placeholder:text-gray-700 font-semibold text-white"
+            />
+          </div>
+        </div>
+
+        <!-- Product Catalog -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Products injected via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-24 glass rounded-[4rem] border-dashed border-gray-800 animate-fadeIn">
+          <h2 class="text-4xl font-bold text-white mb-3">No Services Found</h2>
+          <p class="text-gray-500 max-w-sm mx-auto mb-10 text-lg">Try resetting your filters to see more results.</p>
+          <button id="reset-filters" class="px-12 py-5 bg-purple-600 rounded-full font-black text-[10px] uppercase tracking-widest text-white hover:bg-purple-500 transition-all shadow-xl">
+            Reset Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Detail Modal -->
+      <div id="product-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="modal-backdrop"></div>
+        <div class="relative glass w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] border-purple-500/30 p-8 md:p-14 animate-fadeIn shadow-2xl no-scrollbar" id="modal-content">
+            <!-- Modal Content Injected Here -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { renderHeader, renderFooter } from '../assets/js/main.js';
+    import { SERVICES } from '../assets/js/data.js';
+
+    renderHeader('services');
+    renderFooter();
+
+    // State
+    let activeCategory = 'All';
+    let searchQuery = '';
+
+    const categoryContainer = document.getElementById('category-container');
+    const searchInput = document.getElementById('search-input');
+    const productsGrid = document.getElementById('products-grid');
+    const emptyState = document.getElementById('empty-state');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+    const modal = document.getElementById('product-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalContent = document.getElementById('modal-content');
+
+    // Category Counts
+    const categoryCounts = { All: SERVICES.length };
+    SERVICES.forEach(p => {
+      categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+    });
+
+    const renderStars = (rating) => {
+      let html = '<div class="flex text-yellow-500 text-[10px] space-x-1">';
+      for (let i = 0; i < 5; i++) {
+        html += `<i class="${i < Math.floor(rating) ? 'fas' : 'far'} fa-star"></i>`;
+      }
+      html += `<span class="text-gray-500 ml-1 font-bold">${rating}</span></div>`;
+      return html;
+    };
+
+    const renderCategories = () => {
+      categoryContainer.innerHTML = ['All', 'Agency Services'].map(cat => `
+        <button
+          onclick="window.setActiveCategory('${cat}')"
+          class="flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-500 shrink-0 ${
+            activeCategory === cat 
+              ? 'bg-purple-600 text-white shadow-[0_0_25px_rgba(168,85,247,0.4)] scale-105' 
+              : 'text-gray-500 hover:text-white hover:bg-gray-800/50'
+          }"
+        >
+          <span>${cat}</span>
+          <span class="text-[10px] px-2.5 py-1 rounded-full font-black ${
+            activeCategory === cat ? 'bg-white/20 text-white' : 'bg-gray-800 text-gray-600'
+          }">
+            ${categoryCounts[cat] || 0}
+          </span>
+        </button>
+      `).join('');
+    };
+
+    const renderProductsGrid = () => {
+      const filtered = SERVICES.filter(p => {
+        const matchesCategory = activeCategory === 'All' || p.category === activeCategory;
+        const searchLower = searchQuery.toLowerCase();
+        const matchesSearch = p.title.toLowerCase().includes(searchLower) || 
+                              p.description.toLowerCase().includes(searchLower) ||
+                              p.category.toLowerCase().includes(searchLower);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length > 0) {
+        productsGrid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+        productsGrid.innerHTML = filtered.map((p, idx) => `
+          <div class="relative glass p-8 rounded-[3rem] border-white/5 hover:border-purple-500/50 transition-all duration-500 group flex flex-col h-full animate-fadeIn hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(168,85,247,0.15)]" style="animation-delay: ${(idx * 80) + 200}ms">
+            ${p.featured ? '<div class="absolute -top-3 right-8 px-5 py-1.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-[9px] font-black uppercase tracking-widest text-white shadow-xl z-20">Featured</div>' : ''}
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-16 h-16 rounded-[1.5rem] bg-gray-900 border border-gray-800 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                <i class="fas ${p.icon} text-3xl"></i>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] font-black text-gray-600 uppercase tracking-widest block mb-2">${p.category}</span>
+                ${renderStars(p.rating)}
+              </div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-2xl font-bold mb-3 tracking-tight group-hover:text-white transition-colors">${p.title}</h3>
+              <div class="flex items-baseline mb-5">
+                <span class="text-3xl font-black text-white">${p.price}</span>
+                <span class="text-gray-600 text-[10px] ml-3 font-bold uppercase tracking-widest">Starting</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-8 group-hover:text-gray-300 transition-colors line-clamp-3">
+                ${p.description}
+              </p>
+              <div class="space-y-3 mb-10">
+                <p class="text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em] mb-4">Core Features</p>
+                ${p.features.slice(0, 3).map(f => `
+                  <div class="flex items-start text-[13px] text-gray-400 group-hover:text-gray-200 transition-all duration-300">
+                    <i class="fas fa-check-circle text-purple-500/50 mr-3 mt-1 text-[10px]"></i>
+                    <span class="flex-1">${f}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="flex gap-4 mt-auto">
+              <button onclick="window.location.href='${p.customLink ? p.customLink : `/booking/?service=${encodeURIComponent(p.title)}`}'" class="flex-[2] py-5 bg-white text-black font-black rounded-[1.5rem] text-center text-[10px] uppercase tracking-[0.15em] hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-xl active:scale-95">
+                ${p.customLink ? 'View Details' : 'Get Started'}
+              </button>
+              <button onclick="window.openModal('${p.id}')" class="flex-1 py-5 bg-gray-950/80 border border-gray-800 hover:border-purple-500/50 rounded-[1.5rem] text-gray-500 hover:text-purple-400 transition-all duration-300 text-[10px] font-bold uppercase tracking-widest">
+                Details
+              </button>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        productsGrid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+      }
+    };
+
+    window.setActiveCategory = (cat) => {
+      activeCategory = cat;
+      renderCategories();
+      renderProductsGrid();
+    };
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderProductsGrid();
+    });
+
+    resetFiltersBtn.addEventListener('click', () => {
+      activeCategory = 'All';
+      searchQuery = '';
+      searchInput.value = '';
+      renderCategories();
+      renderProductsGrid();
+    });
+
+    window.openModal = (productId) => {
+      const p = SERVICES.find(prod => prod.id === productId);
+      if(!p) return;
+
+      modalContent.innerHTML = `
+        <button onclick="window.closeModal()" class="absolute top-10 right-10 w-12 h-12 bg-gray-900 border border-gray-800 rounded-full flex items-center justify-center text-gray-500 hover:text-white transition-all">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col md:flex-row md:items-center gap-10 mb-12">
+          <div class="w-28 h-28 rounded-[2rem] bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white text-5xl shadow-2xl">
+            <i class="fas ${p.icon}"></i>
+          </div>
+          <div>
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="px-4 py-1.5 bg-purple-500/10 text-purple-400 text-[10px] font-black uppercase tracking-widest rounded-full">${p.category}</span>
+              ${renderStars(p.rating)}
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">${p.title}</h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+          <div class="lg:col-span-3 space-y-8">
+            <div>
+              <h4 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-4">Description</h4>
+              <p class="text-gray-400 leading-relaxed text-lg">${p.description}</p>
+            </div>
+            ${p.pricingTiers ? `
+              <div>
+                <h4 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-6">Pricing Plans</h4>
+                <div class="grid grid-cols-1 gap-4">
+                  ${p.pricingTiers.map(tier => `
+                    <div class="p-8 bg-gray-950/50 border border-gray-800 rounded-[2rem] flex justify-between items-center group hover:border-purple-500/30 transition-all">
+                      <div>
+                        <p class="font-bold text-white text-xl mb-1">${tier.name}</p>
+                        <p class="text-xs text-gray-500">${tier.features.join(' • ')}</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-2xl font-black text-purple-400">${tier.price}</p>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+          <div class="lg:col-span-2 space-y-8">
+            <div>
+              <h4 class="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-6">Features</h4>
+              <ul class="space-y-4">
+                ${p.features.map(f => `
+                  <li class="flex items-start text-sm text-gray-300">
+                    <div class="w-7 h-7 rounded-full bg-green-500/10 flex items-center justify-center mr-4 mt-0.5 shrink-0">
+                      <i class="fas fa-check text-[10px] text-green-500"></i>
+                    </div>
+                    <span class="pt-1">${f}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button onclick="window.location.href='${p.customLink ? p.customLink : `/booking/?service=${encodeURIComponent(p.title)}`}'" class="w-full py-7 bg-white text-black font-black text-xl rounded-[2rem] text-center uppercase tracking-[0.2em] shadow-2xl hover:bg-purple-600 hover:text-white transition-all flex items-center justify-center space-x-4">
+          <span>${p.customLink ? 'Explore Full Capabilities' : 'Choose Plan'}</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      `;
+      modal.classList.remove('hidden');
+    };
+
+    window.closeModal = () => modal.classList.add('hidden');
+    modalBackdrop.addEventListener('click', window.closeModal);
+
+    // Init
+    renderCategories();
+    renderProductsGrid();
+  </script>
+</body>
+</html>

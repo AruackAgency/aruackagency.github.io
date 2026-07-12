@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shivika Veterinary Clinic - Caring Hands for Every Paw</title>
+    <meta name="description" content="Professional veterinary healthcare in Jodhpur. Compassionate, modern treatment, and personalized care for every pet.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Dr. Shivika Veterinary Clinic">
+    <meta property="og:description" content="Compassionate, modern treatment, and personalized care for every pet.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232E8B57'/%3E%3Cpath d='M50 85c-15 0-25-10-30-25 0-15 5-25 15-25 5 0 10 5 15 5s10-5 15-5c10 0 15 10 15 25-5 15-15 25-30 25z M30 30c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z M50 25c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z M70 30c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="paw-loader">
+            <i class="fas fa-paw fa-3x"></i>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Floating Action Buttons -->
+    <a href="https://wa.me/919876543210" class="floating-btn whatsapp-btn" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button id="backToTop" class="floating-btn back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="themeToggle" class="floating-btn theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <i class="fas fa-stethoscope"></i>
+                <div class="logo-text">
+                    <h1>Dr. Shivika</h1>
+                    <span>Veterinary Clinic</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctor">Doctor</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="tel:+919876543210" class="btn btn-outline emergency-call">
+                    <i class="fas fa-phone-alt"></i> Emergency
+                </a>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-shapes"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal-left">
+                <h2 class="hero-subtitle">Premium Veterinary Hospital</h2>
+                <h1 class="hero-title">Caring Hands for Every <span class="highlight"><i class="fas fa-paw"></i> Paw.</span></h1>
+                <p class="hero-description">Professional veterinary healthcare with compassion, modern treatment, and personalized care for every pet.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-secondary btn-lg">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal-right">
+                <div class="image-glass-card">
+                    <!-- Placeholder using unspash -->
+                    <img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=800" alt="Veterinarian caring for a pet" class="hero-img" fetchpriority="high">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-heartbeat"></i> Trusted Care
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-shield-cat"></i> 24/7 Support
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 3. About the Clinic -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Who We Are</h2>
+                <p>Dedicated to providing the best healthcare for your furry friends</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <h3>Mission & Vision</h3>
+                    <p>At Dr. Shivika Veterinary Clinic, we believe every pet deserves the highest standard of medical care. Our mission is to combine advanced veterinary medicine with compassionate care, ensuring your pets live long, healthy, and happy lives.</p>
+                    <p>We strive to create a friendly, stress-free environment where both pets and their owners feel welcomed and confident in our services.</p>
+                    
+                    <ul class="core-values">
+                        <li><i class="fas fa-check-circle"></i> Personalized Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Veterinary Care</li>
+                        <li><i class="fas fa-check-circle"></i> Friendly Environment</li>
+                        <li><i class="fas fa-check-circle"></i> Affordable Consultation</li>
+                        <li><i class="fas fa-check-circle"></i> Preventive Healthcare</li>
+                        <li><i class="fas fa-check-circle"></i> Pet Wellness Programs</li>
+                    </ul>
+                </div>
+                <div class="about-image reveal-right">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=800" alt="Clinic Interior" class="rounded-img shadow-lg" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Meet the Doctor -->
+    <section id="doctor" class="doctor section-padding bg-light">
+        <div class="container">
+            <div class="doctor-card glass-panel reveal-up">
+                <div class="doctor-image-col">
+                    <div class="doctor-img-wrapper">
+                        <!-- Doctor Image -->
+                        <img src="image/doc.png" alt="Dr. Shivika" class="doctor-img" loading="lazy">
+                    </div>
+                </div>
+                <div class="doctor-info-col">
+                    <h2 class="doctor-name">Dr. Shivika</h2>
+                    <h3 class="doctor-title">Veterinary Doctor</h3>
+                    
+                    <div class="doctor-credentials">
+                        <span class="badge"><i class="fas fa-graduation-cap"></i> B.V.Sc</span>
+                        <span class="badge"><i class="fas fa-book-open"></i> Pursuing M.V.Sc</span>
+                    </div>
+
+                    <p class="doctor-bio">With a deep-rooted passion for animal welfare, Dr. Shivika is committed to preventive healthcare, early diagnosis, and modern treatments. She continuously updates her knowledge to provide the most effective and compassionate care for your beloved companions.</p>
+
+                    <div class="doctor-details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Jodhpur, Rajasthan</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-language"></i>
+                            <div>
+                                <strong>Languages</strong>
+                                <span>Hindi, English</span>
+                            </div>
+                        </div>
+                        <div class="detail-item specialization-list">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <strong>Specialization</strong>
+                                <span>Dogs, Cats, Birds, Rabbits, Small Animals</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary mt-4">Consult Dr. Shivika</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Veterinary Services -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Our Premium Services</h2>
+                <p>Comprehensive healthcare solutions for your pets</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Cards -->
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3>General Checkup</h3>
+                    <p>Comprehensive physical examinations to ensure your pet's overall health and catch issues early.</p>
+                </div>
+
+                <div class="service-card reveal-up" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><i class="fas fa-syringe"></i></div>
+                    <h3>Vaccination</h3>
+                    <p>Core and lifestyle vaccines to protect your pets from dangerous and contagious diseases.</p>
+                </div>
+
+                <div class="service-card reveal-up" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><i class="fas fa-tooth"></i></div>
+                    <h3>Dental Care</h3>
+                    <p>Professional teeth cleaning, scaling, and oral health assessments for your furry friends.</p>
+                </div>
+
+                <div class="service-card reveal-up" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><i class="fas fa-bone"></i></div>
+                    <h3>Pet Nutrition</h3>
+                    <p>Expert dietary advice and personalized nutrition plans tailored to your pet's specific needs.</p>
+                </div>
+
+                <div class="service-card reveal-up" style="transition-delay: 0.4s;">
+                    <div class="service-icon"><i class="fas fa-bug"></i></div>
+                    <h3>Deworming</h3>
+                    <p>Routine parasite control to keep your pets free from internal and external parasites.</p>
+                </div>
+
+                <div class="service-card reveal-up" style="transition-delay: 0.5s;">
+                    <div class="service-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Diagnostic Tests</h3>
+                    <p>Advanced laboratory diagnostics, blood tests, and imaging for accurate medical assessments.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 reveal-up">
+                <p class="mb-4"><em>Also offering: Pet Surgery Consultation, Skin Disease Treatment, Microchipping, Emergency Care, Health Certificates, Home Visits, and Senior/Puppy Care.</em></p>
+                <a href="#contact" class="btn btn-secondary">Request Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Why Choose Us & 7. Statistics -->
+    <section class="why-choose-stats section-padding bg-gradient">
+        <div class="container">
+            <div class="why-choose-grid">
+                <div class="why-content reveal-left">
+                    <div class="section-title text-left">
+                        <h2>Why Choose Dr. Shivika</h2>
+                        <p class="text-white-50">Excellence in Veterinary Care</p>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-user-md"></i> Experienced Veterinary Care</li>
+                        <li><i class="fas fa-microscope"></i> Modern Medical Equipment</li>
+                        <li><i class="fas fa-heart"></i> Compassionate Treatment</li>
+                        <li><i class="fas fa-broom"></i> Clean & Hygienic Clinic</li>
+                        <li><i class="fas fa-hand-holding-usd"></i> Affordable Healthcare</li>
+                        <li><i class="fas fa-ambulance"></i> Emergency Assistance</li>
+                    </ul>
+                </div>
+                
+                <div class="stats-grid reveal-right">
+                    <div class="stat-card glass-panel">
+                        <i class="fas fa-paw stat-icon"></i>
+                        <h3 class="counter" data-target="1000">0</h3>
+                        <p>Happy Pets</p>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <i class="fas fa-briefcase-medical stat-icon"></i>
+                        <h3 class="counter" data-target="500">0</h3>
+                        <p>Successful Treatments</p>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <i class="fas fa-smile stat-icon"></i>
+                        <h3><span class="counter" data-target="98">0</span>%</h3>
+                        <p>Satisfied Pet Owners</p>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <i class="fas fa-clock stat-icon"></i>
+                        <h3>24×7</h3>
+                        <p>Emergency Guidance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Pet Health Tips -->
+    <section class="tips section-padding">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Pet Health Tips</h2>
+                <p>Expert advice for keeping your pets happy and healthy</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card reveal-up">
+                    <div class="tip-img"><img src="https://images.unsplash.com/photo-1597843786411-a7eb8c0fa324?auto=format&fit=crop&q=80&w=800" alt="Vaccination" loading="lazy"></div>
+                    <div class="tip-content">
+                        <h4>Vaccination Schedule</h4>
+                        <p>Stay updated with annual core vaccines to prevent fatal diseases in dogs and cats.</p>
+                    </div>
+                </div>
+                <div class="tip-card reveal-up" style="transition-delay: 0.1s;">
+                    <div class="tip-img"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400" alt="Nutrition" loading="lazy"></div>
+                    <div class="tip-content">
+                        <h4>Balanced Nutrition</h4>
+                        <p>Feed high-quality, species-appropriate food and avoid toxic human foods like chocolate or grapes.</p>
+                    </div>
+                </div>
+                <div class="tip-card reveal-up" style="transition-delay: 0.2s;">
+                    <div class="tip-img"><img src="https://images.unsplash.com/photo-1601758177266-bc599de87707?auto=format&fit=crop&q=80&w=400" alt="Exercise" loading="lazy"></div>
+                    <div class="tip-content">
+                        <h4>Daily Exercise</h4>
+                        <p>Ensure adequate physical and mental stimulation daily to prevent behavioral issues and obesity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 11. Testimonials -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Happy Pets & Owners</h2>
+                <p>Hear what our clients have to say about our care.</p>
+            </div>
+            
+            <div class="testimonial-slider reveal-up">
+                <div class="slider-container" id="testimonialContainer">
+                    <!-- Slides inserted by JS -->
+                    <div class="slide active">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Dr. Shivika is amazing! She treated my Golden Retriever with so much love and care. The clinic is very clean and the staff is friendly."</p>
+                            <div class="reviewer">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Owner" class="reviewer-img" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>Priya Sharma</h4>
+                                    <span>Pet: Max (Dog)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Best vet in Jodhpur. She diagnosed my cat's skin issue accurately and the treatment worked wonderfully. Highly recommend!"</p>
+                            <div class="reviewer">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Client 1" class="reviewer-img" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>Rahul Verma</h4>
+                                    <span>Pet: Luna (Cat)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Very professional and affordable. They handled my aggressive rabbit with such patience. A truly premium experience."</p>
+                            <div class="reviewer">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Client 3" class="reviewer-img" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>Anjali Desai</h4>
+                                    <span>Pet: Thumper (Rabbit)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="testimonialDots"></div>
+                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Gallery -->
+    <section id="gallery" class="gallery section-padding bg-light">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Our Gallery</h2>
+                <p>Glimpses of our happy patients and clinic facilities.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item reveal-up" data-src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&q=80&w=400" alt="Dog Patient" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up" style="transition-delay: 0.1s;" data-src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" alt="Cat Care" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up" style="transition-delay: 0.2s;" data-src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800" alt="Dog Checkup" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up" data-src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=800" alt="Pet Surgery" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up" style="transition-delay: 0.1s;" data-src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400" alt="Happy Pet" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up" style="transition-delay: 0.2s;" data-src="https://images.unsplash.com/photo-1527526029430-319f10814151?auto=format&fit=crop&q=80&w=800">
+                    <img src="https://images.unsplash.com/photo-1527526029430-319f10814151?auto=format&fit=crop&q=80&w=400" alt="Clinic Area" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="High resolution view" id="lightbox-img" loading="lazy">
+        </div>
+    </section>
+
+    <!-- 13. FAQ -->
+    <section id="faq" class="faq section-padding">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common queries answered for you.</p>
+            </div>
+            
+            <div class="faq-container reveal-up">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Do I need an appointment?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>While walk-ins are welcome for emergencies, we highly recommend booking an appointment for routine checkups, vaccinations, and consultations to minimize wait times and ensure the doctor is available.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Do you provide emergency services?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Yes, we offer emergency assistance. Please call our emergency number immediately if your pet is experiencing a life-threatening situation.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What is the standard vaccination schedule?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Puppies and kittens generally start vaccines at 6-8 weeks of age, followed by boosters every 3-4 weeks until they are 16 weeks old. Adult pets require annual boosters. Dr. Shivika will create a personalized schedule for your pet.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Do you perform pet surgery?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Yes, we perform various soft tissue surgeries, spaying, neutering, and minor surgical procedures in our well-equipped operation theatre.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Are home visits available?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Yes, we offer home visit consultations for senior pets or pets that get highly stressed during travel. Please contact us to schedule a home visit.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What payment methods do you accept?
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>We accept Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and Bank Transfers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Clinic Timings -->
+    <section id="timings" class="timings section-padding" aria-label="Doctor timings">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <span class="badge" style="width: fit-content; margin: 0 auto 1rem;">Timings</span>
+                <h2>Clinic Schedule</h2>
+                <p>Plan your visit accordingly — we're available when you need us most.</p>
+            </div>
+            <div class="timings-layout">
+                <div class="timings-table-wrap glass-panel reveal-left">
+                    <table class="timings-table" role="table" aria-label="Doctor's clinic schedule">
+                        <thead>
+                            <tr>
+                                <th scope="col">Day</th>
+                                <th scope="col">Morning</th>
+                                <th scope="col">Evening</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Monday</strong></td>
+                                <td>9:00 AM – 1:00 PM</td>
+                                <td>5:00 PM – 8:00 PM</td>
+                                <td><span class="timing-badge open" aria-label="Open">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tuesday</strong></td>
+                                <td>9:00 AM – 1:00 PM</td>
+                                <td>5:00 PM – 8:00 PM</td>
+                                <td><span class="timing-badge open">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wednesday</strong></td>
+                                <td>9:00 AM – 1:00 PM</td>
+                                <td>5:00 PM – 8:00 PM</td>
+                                <td><span class="timing-badge open">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thursday</strong></td>
+                                <td>9:00 AM – 1:00 PM</td>
+                                <td>5:00 PM – 8:00 PM</td>
+                                <td><span class="timing-badge open">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Friday</strong></td>
+                                <td>9:00 AM – 1:00 PM</td>
+                                <td>5:00 PM – 8:00 PM</td>
+                                <td><span class="timing-badge open">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saturday</strong></td>
+                                <td>9:00 AM – 2:00 PM</td>
+                                <td>—</td>
+                                <td><span class="timing-badge limited">Limited</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sunday</strong></td>
+                                <td>Emergency Only</td>
+                                <td>—</td>
+                                <td><span class="timing-badge emergency">Emergency</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="timings-info reveal-right">
+                    <div class="timing-info-card glass-panel">
+                        <div class="timing-info-icon" aria-hidden="true"><i class="fas fa-ambulance"></i></div>
+                        <h3>24/7 Emergency</h3>
+                        <p>Round-the-clock emergency consultation available. For life-threatening situations, call our emergency line immediately.</p>
+                        <a href="tel:+919876543210" class="btn btn-danger btn-ripple" aria-label="Call emergency number">Call +91 98765 43210</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Contact -->
+    <section id="contact" class="contact section-padding bg-light">
+        <div class="container">
+            <div class="section-title reveal-up">
+                <h2>Get in Touch</h2>
+                <p>We're here to help your pets stay healthy.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info glass-panel reveal-left">
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Clinic Address</h4>
+                            <p>Dr. Shivika Veterinary Clinic<br>Jodhpur, Rajasthan, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@drshivikaclinic.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links mt-4">
+                        <h4>Follow Us</h4>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map reveal-right">
+                    <!-- Google Map iframe placeholder -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114451.98064974637!2d72.94635582386926!3d26.26252985160844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c4eaa06fcb9%3A0x6339003b573e33!2sJodhpur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Dr. Shivika</span>
+                </a>
+                <p>Providing premium veterinary healthcare with compassion, modern treatment, and personalized care for every pet in Jodhpur.</p>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Clinic</a></li>
+                    <li><a href="#doctor">Meet the Doctor</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">General Checkup</a></li>
+                    <li><a href="#">Vaccination</a></li>
+                    <li><a href="#">Pet Surgery</a></li>
+                    <li><a href="#">Dental Care</a></li>
+                    <li><a href="#">Emergency Care</a></li>
+                </ul>
+            </div>
+            
+            <!-- Newsletter removed -->
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2026 Dr. Shivika Veterinary Clinic. All Rights Reserved.</p>
+                </div>
+                <div class="credit">
+                    <p>Website Designed & Developed by <a href="https://www.aruack.online/" target="_blank" class="credit-link">Aruack</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
+    <script src="js/slider.js" defer></script>
+</body>
+</html>

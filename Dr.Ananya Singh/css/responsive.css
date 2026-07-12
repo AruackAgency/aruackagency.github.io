@@ -1,0 +1,461 @@
+/* =====================================================
+   Dr. Aryan Mehta Medical Clinic — Responsive Stylesheet
+   responsive.css | Version 1.0
+   ===================================================== */
+
+/* ── Large Desktop (≤ 1400px) ─────────────────────── */
+@media (max-width: 1400px) {
+  :root { --container: 1140px; }
+
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Desktop (≤ 1200px) ───────────────────────────── */
+@media (max-width: 1200px) {
+  :root {
+    --container: 960px;
+    --section-pad: 80px;
+  }
+
+  .navbar { padding: 1rem 1.5rem; }
+  .nav-links { gap: 0 0.1rem; }
+  .nav-link { padding: 0.5rem 0.6rem; font-size: 0.85rem; }
+
+  .hero-container {
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-float-card-1 { left: -5%; }
+  .hero-float-card-2 { right: -5%; }
+
+  .why-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .about-grid { gap: 3rem; }
+
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .spec-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .timings-layout { grid-template-columns: 1.2fr 1fr; gap: 2rem; }
+
+  .appointment-layout { grid-template-columns: 1fr 1.5fr; gap: 2rem; }
+
+  .testi-slider { grid-template-columns: repeat(3, 1fr); }
+
+  .tips-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-brand { grid-column: span 2; }
+}
+
+/* ── Tablet (≤ 992px) ─────────────────────────────── */
+@media (max-width: 992px) {
+  :root {
+    --section-pad: 70px;
+  }
+
+  /* Navbar */
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 800;
+    gap: 0.3rem;
+    overflow-y: auto;
+  }
+
+  [data-theme="dark"] .nav-links {
+    background: #1A2E45;
+  }
+
+  .nav-links.open { right: 0; }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  /* Mobile overlay */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 799;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hero */
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem 4rem;
+    min-height: auto;
+  }
+
+  .hero-subtitle { max-width: 100%; }
+
+  .hero-stats { justify-content: center; }
+
+  .hero-actions { justify-content: center; }
+
+  .hero-typing { text-align: center; }
+
+  .hero-image-wrap { order: -1; }
+
+  .hero-image-card { max-width: 360px; margin: 0 auto; }
+
+  .hero-float-card-1 { left: 0; top: 5%; }
+  .hero-float-card-2 { right: 0; bottom: 5%; }
+
+  .scroll-indicator { display: none; }
+
+  /* Why Us */
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image-col { order: -1; }
+  .about-doctor-card { max-width: 280px; }
+
+  .about-mv-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Services */
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Specialities */
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Timings */
+  .timings-layout { grid-template-columns: 1fr; }
+  .timings-info { flex-direction: row; }
+  .timing-info-card { flex: 1; }
+
+  /* Appointment */
+  .appointment-layout { grid-template-columns: 1fr; }
+  .appt-info { flex-direction: row; flex-wrap: wrap; }
+  .appt-info > * { flex: 1; min-width: 250px; }
+
+  /* Testimonials */
+  .testi-card { flex: 0 0 calc(50% - 1rem); }
+
+  /* Health Tips */
+  .tips-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item-large { grid-column: span 2; grid-row: span 1; }
+  .gallery-item-tall { grid-row: span 1; }
+
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .contact-hours { grid-column: span 2; }
+  .contact-social { grid-column: span 2; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: span 2; }
+
+  .newsletter-inner { flex-direction: column; text-align: center; }
+  .newsletter-form { width: 100%; justify-content: center; }
+  .newsletter-form input { width: 100%; max-width: 340px; }
+
+  /* Dark toggle - move to bottom */
+  .dark-toggle {
+    top: auto;
+    bottom: 8rem;
+    right: -4px;
+    transform: none;
+  }
+}
+
+/* ── Small Tablet (≤ 768px) ──────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 60px;
+  }
+
+  .container { padding: 0 1.25rem; }
+
+  /* Section headers */
+  .section-header { margin-bottom: 2.5rem; }
+
+  /* Why Us */
+  .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .why-card { padding: 1.5rem 1.25rem; }
+
+  /* About */
+  .about-details-grid { grid-template-columns: 1fr; }
+  .about-mv-grid { grid-template-columns: 1fr; }
+
+  /* Services */
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  /* Specialities */
+  .spec-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .spec-card { padding: 1.75rem 1.5rem; }
+
+  /* Timings */
+  .timings-info { flex-direction: column; }
+  .timings-table th, .timings-table td { padding: 0.75rem 0.9rem; font-size: 0.82rem; }
+
+  /* Appointment form */
+  .form-row { grid-template-columns: 1fr; }
+  .appt-form-wrap { padding: 2rem 1.5rem; }
+
+  /* Testimonials - show 1 at a time on mobile */
+  .testi-card { flex: 0 0 100%; }
+
+  /* Health Tips */
+  .tips-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .gallery-item-large { grid-column: span 2; }
+  .gallery-emoji { font-size: 2rem; }
+  .gallery-item-large .gallery-emoji { font-size: 3rem; }
+
+  /* Contact info grid */
+  .contact-info { grid-template-columns: 1fr; }
+  .contact-hours { grid-column: span 1; }
+  .contact-social { grid-column: span 1; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* Floating actions */
+  .floating-actions { bottom: 5rem; right: 1rem; }
+  .fab { width: 46px; height: 46px; }
+  .fab svg { width: 20px; height: 20px; }
+  .back-to-top { bottom: 1.5rem; right: 1rem; width: 44px; height: 44px; }
+  .back-to-top svg { width: 22px; height: 22px; }
+
+  /* Appointment info */
+  .appt-info { flex-direction: column; }
+  .appt-info > * { min-width: auto; }
+}
+
+/* ── Mobile (≤ 576px) ─────────────────────────────── */
+@media (max-width: 576px) {
+  :root { --section-pad: 50px; }
+
+  /* Typography */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.65rem; }
+
+  .container { padding: 0 1rem; }
+
+  /* Navbar */
+  .navbar { padding: 0.9rem 1rem; }
+  .logo-tagline { display: none; }
+  .logo-name { font-size: 0.95rem; }
+  .logo-icon { width: 32px; height: 32px; }
+
+  /* Hero */
+  .hero { padding-top: 72px; }
+  .hero-container { padding: 1.5rem 1rem 3rem; gap: 2rem; }
+  .hero-image-card { max-width: 280px; }
+  .hero-float-card-1, .hero-float-card-2 { display: none; }
+
+  .hero-stats { gap: 1rem; }
+  .stat-number { font-size: 1.6rem; }
+
+  .hero-actions { flex-direction: column; gap: 0.75rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .hero-badge { font-size: 0.75rem; }
+
+  /* Why Us */
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .why-card { padding: 1.25rem 1rem; }
+  .why-icon-wrap { width: 50px; height: 50px; }
+  .why-icon-wrap svg { width: 22px; height: 22px; }
+  .why-card h3 { font-size: 0.88rem; }
+  .why-card p { font-size: 0.78rem; }
+
+  /* About */
+  .about-doctor-card { max-width: 240px; }
+  .about-mv-grid { grid-template-columns: 1fr; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .service-card { padding: 1.5rem 1.1rem; }
+  .service-icon-bg { width: 50px; height: 50px; }
+  .service-card h3 { font-size: 0.88rem; }
+  .service-card p { font-size: 0.78rem; }
+
+  /* Specialities */
+  .spec-grid { grid-template-columns: 1fr; }
+
+  /* Timings table */
+  .timings-table th:nth-child(2),
+  .timings-table td:nth-child(2) { display: none; }
+
+  /* Appointment */
+  .appt-form-wrap { padding: 1.5rem 1rem; }
+
+  /* Health Tips */
+  .tips-grid { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .gallery-item-large { grid-column: span 2; }
+  .gallery-img { min-height: 120px; }
+  .gallery-emoji { font-size: 1.5rem; }
+  .gallery-item-large .gallery-emoji { font-size: 2.5rem; }
+  .gallery-label { font-size: 0.68rem; }
+
+  /* FAQ */
+  .accordion-trigger { padding: 1rem 1.25rem; font-size: 0.88rem; }
+  .accordion-content p { padding: 0 1.25rem 1rem; }
+
+  /* Contact */
+  .map-wrap iframe { height: 220px; }
+
+  /* Footer */
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input { width: 100%; max-width: 100%; }
+  .newsletter-form .btn { width: 100%; justify-content: center; }
+
+  .footer-main { padding: 3rem 0 2rem; }
+  .footer-grid { gap: 1.5rem; }
+
+  /* Modal */
+  .modal-box { padding: 2rem 1.5rem; }
+
+  /* Lightbox */
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+
+  /* Dark toggle */
+  .dark-toggle { display: none; }
+}
+
+/* ── Extra Small Mobile (≤ 400px) ─────────────────── */
+@media (max-width: 400px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+
+  .why-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item-large { grid-column: span 1; }
+
+  .testi-card { padding: 1.75rem 1.25rem; }
+
+  .hero-stats { flex-direction: column; gap: 0.5rem; }
+  .stat-divider { display: none; }
+
+  .timings-table { font-size: 0.8rem; }
+  .timings-table th, .timings-table td { padding: 0.65rem 0.75rem; }
+
+  .floating-actions { gap: 0.5rem; }
+  .fab { width: 40px; height: 40px; }
+}
+
+/* ── Print Styles ─────────────────────────────────── */
+@media print {
+  .header,
+  .floating-actions,
+  .back-to-top,
+  .dark-toggle,
+  .loader,
+  .scroll-indicator,
+  .hero-float-card,
+  .floating-shapes,
+  .floating-icons { display: none !important; }
+
+  body { font-size: 12pt; background: white; color: black; }
+  .hero { padding-top: 1rem; min-height: auto; }
+  .section-pad { padding: 2rem 0; }
+  a { color: inherit; text-decoration: underline; }
+  .timings-table th, .timings-table td { color: black; background: white; }
+}
+
+/* ── Reduced Motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .doctor-illustration svg,
+  .hero-float-card,
+  .shape,
+  .ficon,
+  .heart,
+  .badge-dot { animation: none !important; }
+}
+
+/* ── High Contrast Mode ───────────────────────────── */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #005A8E;
+    --secondary: #0090B0;
+    --border: #888;
+    --text-muted: #444;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .nav-link { border: 1px solid transparent; }
+  .nav-link:focus { border-color: var(--primary); }
+}

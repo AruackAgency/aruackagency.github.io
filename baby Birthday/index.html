@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Birthday Sherya - A Special Celebration">
+    <title>Happy Birthday Sherya 💖</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/hero-cake.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <i class="fa-solid fa-cake-candles fa-bounce cake-icon"></i>
+            <h2>Loading...</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Controller -->
+    <div class="music-controller glass">
+        <button id="music-btn" class="music-btn"><i class="fa-solid fa-play"></i></button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky">
+        <div class="nav-container">
+            <div class="logo">Sherya ✨</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#message">Message</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#wishes">Wishes</a></li>
+                <li><a href="#surprise">Surprise</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle glass">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header id="home" class="hero">
+        <!-- Floating items will be added via JS/CSS -->
+        <div class="hero-content glass-card fade-up">
+            <h3 id="greeting">Good Morning,</h3>
+            <h1 class="elegant-text title-anim">
+                <span class="emoji-bounce">🎂</span> Happy Birthday <br>
+                <span class="highlight">Sherya</span> ❤️
+            </h1>
+            <p class="subtitle">"Today is all about celebrating the amazing person you are."</p>
+            <div class="hero-illustration">
+                <img src="assets/images/hero-cake.png" alt="Birthday Cake" class="cake-img">
+            </div>
+            <a href="#message" class="btn primary-btn">Start Celebration <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <!-- Special Message Section -->
+    <section id="message" class="message-section">
+        <div class="container">
+            <div class="glass-card message-card fade-up">
+                <h2 class="section-title elegant-text">💖 Dear Sherya</h2>
+                <div class="typewriter-container">
+                    <p id="typewriter-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Button Section -->
+    <section class="interactive-section">
+        <div class="container text-center">
+            <button id="interactive-btn" class="btn magic-btn pulse">Click Me ❤️</button>
+            <p id="random-message" class="elegant-text mt-4"></p>
+        </div>
+    </section>
+
+    <!-- Reasons You're Amazing -->
+    <section id="reasons" class="reasons-section">
+        <div class="container">
+            <h2 class="section-title elegant-text text-center fade-up">Why You're Amazing</h2>
+            <div class="reasons-grid">
+                <div class="reason-card glass-card fade-up delay-1">
+                    <i class="fa-solid fa-face-smile fa-2x"></i>
+                    <h3>Beautiful Smile</h3>
+                </div>
+                <div class="reason-card glass-card fade-up delay-2">
+                    <i class="fa-solid fa-heart fa-2x"></i>
+                    <h3>Kind Heart</h3>
+                </div>
+                <div class="reason-card glass-card fade-up delay-3">
+                    <i class="fa-solid fa-seedling fa-2x"></i>
+                    <h3>Caring Nature</h3>
+                </div>
+                <div class="reason-card glass-card fade-up delay-1">
+                    <i class="fa-solid fa-star fa-2x"></i>
+                    <h3>Wonderful Personality</h3>
+                </div>
+                <div class="reason-card glass-card fade-up delay-2">
+                    <i class="fa-solid fa-sun fa-2x"></i>
+                    <h3>Positive Energy</h3>
+                </div>
+                <div class="reason-card glass-card fade-up delay-3">
+                    <i class="fa-solid fa-user-group fa-2x"></i>
+                    <h3>Lovely Friend</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title elegant-text text-center fade-up">Birthday Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item slide-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Today</h3>
+                        <p>Your special day begins! 🌟</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Celebrate</h3>
+                        <p>Time to party and have fun! 🎉</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Smile</h3>
+                        <p>Keep shining with your beautiful smile! 😊</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Cake Time</h3>
+                        <p>Make a wish and cut the cake! 🎂</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Party</h3>
+                        <p>Dance, laugh, and enjoy! 🎈</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>New Memories</h3>
+                        <p>Creating unforgettable moments! 📸</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Future Dreams</h3>
+                        <p>May all your wishes come true! ✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Cards -->
+    <section id="wishes" class="wishes-section">
+        <div class="container">
+            <h2 class="section-title elegant-text text-center fade-up">Warm Wishes</h2>
+            <div class="wishes-grid">
+                <div class="wish-card glass-card fade-up delay-1">
+                    <i class="fa-solid fa-face-laugh-beam"></i>
+                    <h3>Stay Happy</h3>
+                </div>
+                <div class="wish-card glass-card fade-up delay-2">
+                    <i class="fa-solid fa-face-grin-stars"></i>
+                    <h3>Keep Smiling</h3>
+                </div>
+                <div class="wish-card glass-card fade-up delay-3">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <h3>Enjoy Your Day</h3>
+                </div>
+                <div class="wish-card glass-card fade-up delay-1">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    <h3>Dreams Come True</h3>
+                </div>
+                <div class="wish-card glass-card fade-up delay-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Shine Bright</h3>
+                </div>
+                <div class="wish-card glass-card fade-up delay-3">
+                    <i class="fa-solid fa-crown"></i>
+                    <h3>Stay Amazing</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise Section -->
+    <section id="surprise" class="surprise-section">
+        <div class="container text-center">
+            <h2 class="section-title elegant-text fade-up">A Little Surprise</h2>
+            <div class="gift-container fade-up delay-1">
+                <div id="gift-box" class="gift-box glass">
+                    <i class="fa-solid fa-gift fa-4x pulse-fast"></i>
+                    <p class="mt-2">Click to open!</p>
+                </div>
+                <div id="surprise-content" class="surprise-content hidden">
+                    <h2 class="elegant-text">🎉 Surprise! 🎉</h2>
+                    <p>"Wishing you the happiest birthday ever, Sherya!"</p>
+                    <button id="celebrate-btn" class="btn magic-btn mt-3">Celebrate More!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canvases for Animations -->
+    <canvas id="fireworks-canvas"></canvas>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Back to top -->
+    <div class="back-to-top glass" id="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Made with <i class="fa-solid fa-heart fa-beat heart-icon"></i> for Sherya</p>
+                    <p class="credit">Website made by <a href="https://www.aruack.online/" target="_blank">Aruack</a></p>
+                    <div class="clock-date">
+                        <span id="current-date"></span> | <span id="current-time"></span>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
